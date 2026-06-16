@@ -8,163 +8,531 @@
 <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
 <link rel="shortcut icon" href="favicon/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="MyWebSite" />
+<meta name="apple-mobile-web-app-title" content="Muramalla Jahnavi Artistry" />
 <link rel="manifest" href="favicon/site.webmanifest" />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta name="description" content="Muramalla Jahnavi — Makeup Artist based in Bengaluru. Bridal, editorial, and special occasion artistry.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-logo">Muramalla Jahnavi Artistry</a>
-  <ul class="nav-links">
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <img src="favicon/favicon.svg" alt="MJ" class="nav-logo-img">
+    <span class="nav-logo-text">Artistry</span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#book" class="nav-cta">Book</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-text">
-    <p class="hero-eyebrow">Makeup Artist · Bengaluru · Worldwide</p>
-    <h1 class="hero-name"><br>Muramalla<br><em>Jahnavi</em></h1>
-    <p class="hero-title">Artistry &amp; Beauty</p>
-    <p class="hero-desc">Where beauty meets intention. Crafting looks that feel as remarkable as they appear — for brides, portraits, editorial, and every moment that deserves to be remembered.</p>
-    <a href="#contact" class="hero-cta">
-      Book a consultation
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-    </a>
-  </div>
-  <div class="hero-visual">
-    <div class="hero-portrait">
-      <img src="portfolio-image.jpg" alt="Jahnavi Muramalla Artistry Portfolio">
+  <div class="hero-bg-text" aria-hidden="true">Artistry</div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Makeup Artist &nbsp;·&nbsp; Bengaluru &nbsp;·&nbsp; Worldwide</p>
+      <h1 class="hero-name">
+        Muramalla<br>
+        <em>Jahnavi</em>
+      </h1>
+      <p class="hero-tagline">Beauty as intention.</p>
+      <p class="hero-desc">Every face is a different story. I work to tell it beautifully.<br/> For brides, portraits, editorial, and every moment that deserves to be remembered.</p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-primary">View Portfolio</a>
+        <a href="#book" class="btn-ghost">Book a Consultation</a>
+      </div>
     </div>
-    <div class="hero-tag">Making you feel like yourself, elevated.</div>
+    <div class="hero-visual">
+      <div class="hero-portrait-wrap">
+        <div class="hero-portrait">
+          <img src="img/portfolio-image.JPG" alt="Jahnavi Muramalla Artistry — Portfolio Work" loading="eager">
+        </div>
+        <div class="hero-portrait-accent"></div>
+      </div>
+      <blockquote class="hero-float-quote">
+        "Making you feel like yourself, elevated."
+      </blockquote>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">50<sup>+</sup></span>
+      <span class="hero-stat-label">Bridal Looks</span>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">5<sup>+</sup></span>
+      <span class="hero-stat-label">Years of Practice</span>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">Blr</span>
+      <span class="hero-stat-label">Based &amp; Available Worldwide</span>
+    </div>
   </div>
 </section>
 
-<div class="service-tags-wrap">
-  <ul class="service-tags-list">
-    <li class="service-tag">Bridal Artistry</li>
-    <li class="service-tag"><span class="tag-dot">●</span> Editorial &amp; Film</li>
-    <li class="service-tag"><span class="tag-dot">●</span> Special Occasions</li>
-    <li class="service-tag"><span class="tag-dot">●</span> Makeup Courses</li>
-    <li class="service-tag"><span class="tag-dot">●</span> Group Bookings</li>
-    <li class="service-tag"><span class="tag-dot">●</span> Consultations</li>
-  </ul>
+<!-- SERVICE TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Bridal Artistry</span>
+    <span class="ticker-dot">◆</span>
+    <span>Editorial &amp; Film</span>
+    <span class="ticker-dot">◆</span>
+    <span>Special Occasions</span>
+    <span class="ticker-dot">◆</span>
+    <span>Makeup Courses</span>
+    <span class="ticker-dot">◆</span>
+    <span>Group Bookings</span>
+    <span class="ticker-dot">◆</span>
+    <span>Consultations</span>
+    <span class="ticker-dot">◆</span>
+    <span>Bridal Artistry</span>
+    <span class="ticker-dot">◆</span>
+    <span>Editorial &amp; Film</span>
+    <span class="ticker-dot">◆</span>
+    <span>Special Occasions</span>
+    <span class="ticker-dot">◆</span>
+    <span>Makeup Courses</span>
+    <span class="ticker-dot">◆</span>
+    <span>Group Bookings</span>
+    <span class="ticker-dot">◆</span>
+    <span>Consultations</span>
+    <span class="ticker-dot">◆</span>
+  </div>
 </div>
 
+<!-- ABOUT -->
 <section class="about" id="about">
-  <div class="about-grid">
-    <div class="about-img-block">
-      <div class="about-img">
-        <img src="artist-image.JPG" alt="Jahnavi Muramalla - Makeup Artist">
+  <div class="about-inner">
+    <div class="about-media">
+      <div class="about-carousel" id="aboutCarousel">
+        <div class="about-carousel-card active" data-index="0">
+          <div class="about-card-image">
+            <img src="img/artist-img1.JPG" alt="Jahnavi Muramalla — Makeup Artist" loading="lazy">
+          </div>
+        </div>
+        <div class="about-carousel-card next" data-index="1">
+          <div class="about-card-image">
+            <img src="img/artist-img2.JPG" alt="Jahnavi Muramalla — Makeup Artist" loading="lazy">
+          </div>
+        </div>
+        <div class="about-carousel-card prev" data-index="2">
+          <div class="about-card-image">
+            <img src="img/artist-img3.JPG" alt="Jahnavi Muramalla — Makeup Artist" loading="lazy">
+          </div>
+        </div>
+        
+        <div class="about-carousel-controls">
+          <button class="about-carousel-btn prev" id="aboutPrev" aria-label="Previous image">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="about-carousel-btn next" id="aboutNext" aria-label="Next image">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
+
     </div>
-    <div>
-      <p class="section-label">About</p>
+    <div class="about-text">
+      <p class="section-eyebrow">About</p>
       <h2 class="section-heading">The artist<br>behind the <em>look</em></h2>
       <div class="about-body">
-        <p>I believe makeup is more than technique — it's the art of seeing someone clearly and drawing out what's already luminous in them. Every face tells a different story, and my work is to tell it beautifully.</p>
+        <p>I believe makeup is more than technique — it is the art of seeing someone clearly and drawing out what's already luminous in them. Every face tells a different story, and my work is to tell it beautifully.</p>
         <p>Based in Bengaluru, I work with brides, photographers, brands, and individuals who value artistry that is thoughtful, precise, and deeply personal. My work spans bridal, editorial, film, and everyday transformations.</p>
-        <p>Whether it's the quiet intimacy of a bridal morning or the bold energy of an editorial shoot, I bring the same focus to every sitting: presence, skill, and care.</p>
+        <p>Whether it's the quiet intimacy of a bridal morning or the bold energy of an editorial shoot, I bring the same focus to every sitting: presence, skill, and genuine care.</p>
       </div>
-      <div class="about-stats">
-        <div><span class="stat-num">50+</span><span class="stat-label">Bridal Looks</span></div>
-        <div><span class="stat-num">5+</span><span class="stat-label">Years of Practice</span></div>
-        <div><span class="stat-num">Blr <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-left: 0.2rem; opacity: 0.8;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></span><span class="stat-label">Based &amp; Available</span></div>
-      </div>
+      <a href="#book" class="btn-outline">Work with me</a>
     </div>
   </div>
 </section>
 
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-inner">
+    <div class="portfolio-header">
+      <div>
+        <p class="section-eyebrow">Portfolio</p>
+        <h2 class="section-heading">Selected <em>work</em></h2>
+      </div>
+      <div class="portfolio-filters" role="tablist" aria-label="Filter portfolio by category">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="bridal" role="tab" aria-selected="false">Bridal</button>
+        <button class="filter-btn" data-filter="editorial" role="tab" aria-selected="false">Editorial</button>
+        <button class="filter-btn" data-filter="occasion" role="tab" aria-selected="false">Occasions</button>
+      </div>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid"></div>
+
+    <div class="portfolio-load-more" id="portfolioLoadMoreWrap" style="display: none; text-align: center; margin-top: 3rem;">
+      <button class="btn-outline" id="btnLoadMore">View More Work</button>
+    </div>
+
+    <div class="portfolio-cta">
+      <p class="portfolio-cta-text">More on Instagram</p>
+      <a href="https://instagram.com/muramallajahnaviartistry" class="btn-outline" target="_blank" rel="noopener">
+        @muramallajahnaviartistry
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
 <section class="services" id="services">
-  <div style="max-width: 1100px; margin: 0 auto;">
-    <p class="section-label">Services</p>
-    <h2 class="section-heading">What I offer</h2>
+  <div class="services-inner">
+    <div class="services-header">
+      <p class="section-eyebrow">Services</p>
+      <h2 class="section-heading">What I offer</h2>
+    </div>
     <div class="services-grid">
-      <div class="service-card">
-        <div class="service-num">01</div>
-        <h3 class="service-name">Bridal Artistry</h3>
-        <p class="service-desc">Full bridal day makeup — mehendi, sangeet, and wedding day. Trials included. Designed to last, designed to photograph beautifully.</p>
+
+      <div class="service-card" data-num="01">
+        <div class="service-card-inner">
+          <h3 class="service-name">Bridal Artistry</h3>
+          <p class="service-desc">Full bridal day makeup — mehendi, sangeet, and wedding day. Trials included. Designed to last and photograph beautifully across every light.</p>
+          <a href="#book" class="service-link">
+            Enquire
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="service-num">02</div>
-        <h3 class="service-name">Editorial &amp; Film</h3>
-        <p class="service-desc">Conceptual looks for photographers, directors, and content creators. Bold, precise, and camera-ready.</p>
+
+      <div class="service-card" data-num="02">
+        <div class="service-card-inner">
+          <h3 class="service-name">Editorial &amp; Film</h3>
+          <p class="service-desc">Conceptual looks for photographers, directors, and content creators. Bold, precise, and camera-ready for any format.</p>
+          <a href="#book" class="service-link">
+            Enquire
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="service-num">03</div>
-        <h3 class="service-name">Special Occasions</h3>
-        <p class="service-desc">Parties, receptions, corporate events, portrait sessions. Polished looks for every occasion that calls for intention.</p>
+
+      <div class="service-card" data-num="03">
+        <div class="service-card-inner">
+          <h3 class="service-name">Special Occasions</h3>
+          <p class="service-desc">Parties, receptions, corporate events, portrait sessions. Polished, intentional looks for every moment that calls for care.</p>
+          <a href="#book" class="service-link">
+            Enquire
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="service-num">04</div>
-        <h3 class="service-name">Makeup Courses</h3>
-        <p class="service-desc">Personalised makeup courses tailored to your needs and skill level. From self-makeup classes to one-on-one pro-makeup sessions.</p>
+
+      <div class="service-card" data-num="04">
+        <div class="service-card-inner">
+          <h3 class="service-name">Makeup Courses</h3>
+          <p class="service-desc">Personalised one-on-one sessions for self-makeup or professional skill development. Tailored to your level and goals.</p>
+          <a href="#book" class="service-link">
+            Enquire
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="service-num">05</div>
-        <h3 class="service-name">Group Bookings</h3>
-        <p class="service-desc">Bridal parties, family events, photoshoot teams. Coordinated, timely, and stress-free for everyone involved.</p>
+
+      <div class="service-card" data-num="05">
+        <div class="service-card-inner">
+          <h3 class="service-name">Group Bookings</h3>
+          <p class="service-desc">Bridal parties, family events, photoshoot teams. Coordinated, timely, and stress-free for everyone involved.</p>
+          <a href="#book" class="service-link">
+            Enquire
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="service-num">06</div>
-        <h3 class="service-name">Consultations</h3>
-        <p class="service-desc">Not sure what you need? A one-on-one conversation to explore looks, test techniques, and plan the right approach.</p>
+
+      <div class="service-card service-card--accent" data-num="06">
+        <div class="service-card-inner">
+          <h3 class="service-name">Consultations</h3>
+          <p class="service-desc">Not sure what you need? A focused conversation to explore looks, test techniques, and plan the right approach for your vision.</p>
+          <a href="#book" class="service-link">
+            Book now
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-header">
+      <p class="section-eyebrow">Testimonials</p>
+      <h2 class="section-heading">Words from<br><em>clients</em></h2>
+    </div>
+
+    <div class="testimonials-track-wrap">
+      <div class="testimonials-track" id="testimonialsTrack">
+
+        <article class="testimonial-card">
+          <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+          <blockquote class="testimonial-text">
+            One of the best MUAs in Bangalore. Jahnavi became more of a friend than a MUA. She's extremely patient, very understanding of every tiny thing I needed, and always paid attention to the smallest details that mattered to me. She matched my energy, calmed my nerves, and created looks that were exactly what I had envisioned for each event.
+            As a South Indian bride, she made me feel completely comfortable in all the looks that needed that North Indian bride touch - effortless, elegant, and still very "me." I would recommend her wholeheartedly to anyone looking for someone warm, talented, and genuinely invested in your big day.
+          </blockquote>
+          <footer class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">Y</div>
+            <div>
+              <p class="testimonial-name">Yamini H Kadakol</p>
+              <p class="testimonial-role">Bangalore</p>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+          <blockquote class="testimonial-text">
+            I couldn't have trusted anyone with this had it not been for Jahnavi. For someone who has zero clue about makeup and just wanted to have a very natural but nice look, Jahnavi was just the right person. She made me feel so comfortable and helped me with setting up everything about my look. She is extremely talented and actually gifted with what she does. I don't think so I am going to get the same finish anywhere else apart from Jahnavi.
+            Trust me, if you have her you would not be disappointed at all. She is gonna doll you up so well that you would not even require a mirror to check yourself out after getting ready!!
+          </blockquote>
+          <footer class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">M</div>
+            <div>
+              <p class="testimonial-name">Muskaan</p>
+              <p class="testimonial-role">Delhi</p>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+          <blockquote class="testimonial-text">
+            She's one of the best, most humble artists you can get. Her passion to make you feel comfortable and the technique she has acquired over the years is something you can't miss out on. So if you're looking for effortless makeup and hair, go for her.
+          </blockquote>
+          <footer class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">S</div>
+            <div>
+              <p class="testimonial-name">Sejal Dubey</p>
+              <p class="testimonial-role">Hyderabad</p>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+          <blockquote class="testimonial-text">
+            Jahnavi, I just can't thank you enough for the makeup. You made me look just the way I always wanted to be. Your work is amazing. May god bless you and fulfill all your dreams. Thank you so much and will always recommend your name to all. Also you are such a gem of a person ❤️
+          </blockquote>
+          <footer class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">A</div>
+            <div>
+              <p class="testimonial-name">Arpita Bhowmick</p>
+              <p class="testimonial-role">Jamshedpur</p>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+          <blockquote class="testimonial-text">
+            I did the 5 days self makeup course by Muramalla Jahnavi. It was great experience to learn makeup from you, never thought that makeup is so easy but the way you taught me is amazing. You are an open book with your knowledge of makeup and I felt completely comfortable asking any questions. At the first I was very nervous for the classes but trust me after meeting you I felt like you are my sister, you were so friendly and calm during the classes. I came to you with zero knowledge of makeup but now I'm able to choose right makeup products for my skin tone as well as for others and also able to copy looks from videos after correct knowledge of brushes, techniques and colour blending. You are one of the best makeup artist out there. And yes last but not the least your mom is love. She is so supportive and treated me like family.
+          </blockquote>
+          <footer class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">P</div>
+            <div>
+              <p class="testimonial-name">Puja Hembrom</p>
+              <p class="testimonial-role">Jamshedpur</p>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+          <blockquote class="testimonial-text">
+            Jahnavi did a fabulous job with my makeup. My events were extremely time bound and she still managed to nail every look for me. Even during the trial, Jahnavi's professional yet humble attitude pushed me to hire her. She really cares for her clients and is extremely punctual.
+            She discussed all my requirements and arranged everything accordingly without having me to worry one bit. She would even recommend improvisations throughout the journey to make the look perfect. Absolutely recommended for crazy Indian wedding schedules and for any events.
+          </blockquote>
+          <footer class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">S</div>
+            <div>
+              <p class="testimonial-name">Sneha Raman</p>
+              <p class="testimonial-role">Germany</p>
+            </div>
+          </footer>
+        </article>
+
+      </div>
+
+      <div class="testimonials-nav" aria-label="Testimonials navigation">
+        <button class="t-nav-btn" id="tPrev" aria-label="Previous testimonial">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 7H2M6 3l-4 4 4 4"/></svg>
+        </button>
+        <div class="t-dots" id="tDots" role="tablist" aria-label="Testimonial pages"></div>
+        <button class="t-nav-btn" id="tNext" aria-label="Next testimonial">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </button>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <div>
-      <p class="section-label">Contact</p>
+<!-- BOOKING / CONTACT -->
+<section class="book" id="book">
+  <div class="book-inner">
+
+    <div class="book-intro">
+      <p class="section-eyebrow">Book</p>
       <h2 class="section-heading">Let's create<br>something <em>beautiful</em></h2>
-      <p class="contact-desc">Reach out to discuss your event, enquire about availability, or simply say hello. I'd love to hear about what you have in mind.</p>
-      <p class="contact-desc" style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--taupe);">Based in Bengaluru · Available for travel</p>
-    </div>
-    <div>
-      <div class="contact-links">
-        <a href="https://instagram.com/muramallajahnaviartistry" class="contact-link" target="_blank" rel="noopener">
-          <div class="contact-link-icon">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#8B7355"/></svg>
+      <p class="book-desc">Reach out to discuss your event, check availability, or simply say hello. Fill in the form and I'll be in touch within 24 hours.</p>
+
+      <div class="book-channels">
+        <a href="https://instagram.com/muramallajahnaviartistry" class="channel-link" target="_blank" rel="noopener">
+          <div class="channel-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
           </div>
-          <div class="contact-link-text">
-            <span class="contact-link-platform">Instagram</span>
-            <span class="contact-link-handle">@muramallajahnaviartistry</span>
+          <div>
+            <p class="channel-platform">Instagram</p>
+            <p class="channel-handle">@muramallajahnaviartistry</p>
           </div>
         </a>
-        <a href="https://youtube.com/@muramallajahnaviartistry" class="contact-link" target="_blank" rel="noopener">
-          <div class="contact-link-icon">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10,9 16,12 10,15" fill="#8B7355" stroke="none"/></svg>
+        <a href="https://youtube.com/@muramallajahnaviartistry" class="channel-link" target="_blank" rel="noopener">
+          <div class="channel-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/></svg>
           </div>
-          <div class="contact-link-text">
-            <span class="contact-link-platform">YouTube</span>
-            <span class="contact-link-handle">@muramallajahnaviartistry</span>
-          </div>
-        </a>
-        <a href="mailto:jahnavimuramalla@gmail.com" class="contact-link">
-          <div class="contact-link-icon">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 8l10 6 10-6"/></svg>
-          </div>
-          <div class="contact-link-text">
-            <span class="contact-link-platform">Email</span>
-            <span class="contact-link-handle">info@muramallajahnaviartistry.com</span>
+          <div>
+            <p class="channel-platform">YouTube</p>
+            <p class="channel-handle">@muramallajahnaviartistry</p>
           </div>
         </a>
+        <a href="mailto:info@muramallajahnaviartistry.com" class="channel-link">
+          <div class="channel-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 8l10 6 10-6"/></svg>
+          </div>
+          <div>
+            <p class="channel-platform">Email</p>
+            <p class="channel-handle">info@muramallajahnaviartistry.com</p>
           </div>
         </a>
       </div>
     </div>
+
+    <div class="book-form-wrap">
+
+      <!-- AVAILABILITY CALENDAR -->
+      <div class="availability-block">
+        <p class="availability-label">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Check Availability
+        </p>
+        <!-- 
+          HOW TO CONNECT YOUR GOOGLE CALENDAR:
+          1. Open Google Calendar → Settings → click your calendar name under "My calendars"
+          2. Scroll to "Integrate calendar" → set the calendar to PUBLIC
+          3. Copy the "Public address in iCal format" or the embed HTML snippet
+          4. Replace the iframe src below with your embed URL, e.g.:
+             https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID%40gmail.com&ctz=Asia%2FKolkata&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH
+          5. Use &bgcolor=%23F9F5F0 &color=%238B7355 to match the site palette
+        -->
+        <div class="calendar-embed-wrap">
+          <iframe
+            id="availabilityCalendar"
+            src="https://calendar.google.com/calendar/embed?src=a1bc0d0ca34b4ddc921b08058d3d36937ac0359b5403c91c946b9bd16d0d5855%40group.calendar.google.com&ctz=Asia%2FKolkata&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&bgcolor=%23F9F5F0"
+            style="border:0"
+            width="100%"
+            height="340"
+            frameborder="0"
+            scrolling="no"
+            title="Jahnavi's availability calendar"
+            loading="lazy">
+          </iframe>
+          <p class="calendar-note">Blocked dates indicate existing bookings. Contact me for confirmed availability.</p>
+        </div>
+      </div>
+
+      <!-- ENQUIRY FORM (Web3Forms) -->
+      <form class="book-form" id="bookForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="94a123c5-f677-401e-bdf4-e71df8d69485">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Your name <span class="form-req" aria-label="required">*</span></label>
+            <input type="text" id="fname" name="name" placeholder="Full name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="femail">Email <span class="form-req" aria-label="required">*</span></label>
+            <input type="email" id="femail" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fphone">Phone / WhatsApp</label>
+            <input type="tel" id="fphone" name="phone" placeholder="+91 98765 43210" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="fdate">Event Date <span class="form-req" aria-label="required">*</span></label>
+            <input type="date" id="fdate" name="date" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fservice">Service <span class="form-req" aria-label="required">*</span></label>
+          <select id="fservice" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option>Bridal Artistry</option>
+            <option>Editorial &amp; Film</option>
+            <option>Special Occasion</option>
+            <option>Makeup Course</option>
+            <option>Group Booking</option>
+            <option>Consultation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fmessage">Tell me about your vision</label>
+          <textarea id="fmessage" name="message" rows="4" placeholder="Describe your event, style references, or anything that will help me understand what you're looking for..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit" id="formSubmit">
+          Send Enquiry
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </button>
+        <p class="form-note">I'll respond within 24 hours. For urgent enquiries, reach me on Instagram.</p>
+      </form>
+
+    </div>
   </div>
 </section>
 
-<footer>
-  <span class="footer-logo">Muramalla Jahnavi Artistry</span>
-  <span class="footer-copy">© 2025 · Bengaluru, India</span>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo">Muramalla Jahnavi Artistry</p>
+      <p class="footer-tagline">Beauty as intention.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#book">Book</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://instagram.com/muramallajahnaviartistry" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+      </a>
+      <a href="https://youtube.com/@muramallajahnaviartistry" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10,9 16,12 10,15" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2025 Muramalla Jahnavi Artistry · Bengaluru, India</p>
 </footer>
 
+<script src="main.js"></script>
 </body>
 </html>
