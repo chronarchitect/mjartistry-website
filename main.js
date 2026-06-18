@@ -168,7 +168,11 @@
 
     function goTo(index) {
       current = Math.max(0, Math.min(index, maxIndex()));
-      const cardWidth = cards[0].offsetWidth + 24; // gap 1.5rem ≈ 24px
+      const card = cards[0];
+      const style = window.getComputedStyle(track);
+      const gap = parseFloat(style.gap) || 0;
+      const cardWidth = card.offsetWidth + gap;
+      
       track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
       updateDots();
     }
